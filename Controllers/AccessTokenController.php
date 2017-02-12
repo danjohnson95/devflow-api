@@ -1,4 +1,4 @@
-<?php
+<?php namespace Controllers;
 
 class AccessTokenController extends Controller{
 
@@ -15,7 +15,7 @@ class AccessTokenController extends Controller{
 		
 		if(!$file){
 			$this->Errors[]['message'] = "Fatal error with API (our fault, soz)";
-			return $this->sendErrors();
+			return $this->returnErrors();
 		}
 		
 		$file = json_decode($file);
@@ -54,7 +54,7 @@ class AccessTokenController extends Controller{
 				'url' => $this->AuthURL,
 				'auth' => $this->Username.":".$this->Password,
 				'form' => $this->buildBody()
-			])
+			]);
 		}
 	}
 }
