@@ -2,7 +2,7 @@
 
 class Controller{
 
-	private $Errors = [];
+	protected $Errors = [];
 
 	public function returnErrors(){
 		echo json_encode(array('errors' => $this->Errors));

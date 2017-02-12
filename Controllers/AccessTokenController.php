@@ -47,7 +47,7 @@ class AccessTokenController extends Controller{
 	
 	public function handle(){
 		$this->doValidation();
-		if(!count($this->Errors)){
+		if(count($this->Errors)){
 			$this->returnErrors();
 		}else{
 			$this->doRequest([
