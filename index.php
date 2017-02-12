@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require __DIR__.'/vendor/autoload.php';
 $Router = new Klein\Klein;
 
-$Router->with('/api/v1', function() use ($Router){
+$Router->with('/v1', function() use ($Router){
 	$Router->respond('POST', '/access_token', function($req, $res){
 		$AccessTokenController = new Controllers\AccessTokenController;
 		return $AccessTokenController->handle();
